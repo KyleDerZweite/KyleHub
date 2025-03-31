@@ -4,7 +4,7 @@ import { FaDiscord } from 'react-icons/fa'
 
 const Footer = () => {
     return (
-        <footer className="border-t border-gray-800 bg-black/70 backdrop-blur-sm">
+        <footer className="py-6 border-t border-purple-500/30 mt-auto">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="col-span-1 md:col-span-1">
@@ -46,7 +46,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500">
+                <div className="mt-12 pt-8 border-t border-purple-500/30 text-center text-gray-500">
                     <p>© 2025 KyleHub. All rights reserved</p>
                     <div className="mt-4 flex justify-center space-x-6">
                         <a href="https://github.com/KyleDerZweite" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors">GitHub</a>
