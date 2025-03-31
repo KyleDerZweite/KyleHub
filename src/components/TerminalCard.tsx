@@ -67,11 +67,18 @@ const TerminalCard = () => {
                             <span className="text-gray-400 text-sm">terminal@kylehub.dev</span>
                         </div>
                         <div className="font-mono text-green-400 space-y-2">
-                            <p>$ <span className="typing-effect">Welcome to KyleHub.dev</span></p>
-                            <p>$ <span
-                                className="typing-effect">Solving today&#39;s challenges with tomorrow&#39;s code</span>
+                            <p className="terminal-command">
+                                <span className="terminal-command-symbol">$</span>
+                                <span className="typing-effect">Welcome to KyleHub.dev</span>
                             </p>
-                            <p className="text-purple-300">$ <span className="typing-effect">Code Riddle:</span></p>
+                            <p className="terminal-command">
+                                <span className="terminal-command-symbol">$</span>
+                                <span className="typing-effect">Solving today&#39;s challenges with tomorrow&#39;s code</span>
+                            </p>
+                            <p className="terminal-command text-purple-300">
+                                <span className="terminal-command-symbol">$</span>
+                                <span className="typing-effect">Code Riddle:</span>
+                            </p>
                             <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto text-sm">
 {`function mystery(n) {
   return n === 0 
@@ -88,7 +95,9 @@ const TerminalCard = () => {
                             </p>
 
                             <div className="mt-6 pt-4 border-t border-gray-800">
-                                <p>$ <span className="typing-effect">echo &#34;Here&#39;s another challenge:&#34;</span>
+                                <p className="terminal-command">
+                                    <span className="terminal-command-symbol">$</span>
+                                    <span className="typing-effect">echo &#34;Here&#39;s another challenge:&#34;</span>
                                 </p>
                                 <pre className="bg-gray-900 p-4 rounded-md overflow-x-auto text-sm mt-2">
 {`async function fetchData() {

@@ -62,17 +62,19 @@
   }
 
   .tech-card::after {
-    @apply content-[''] absolute -inset-[1px] rounded-lg opacity-0 transition-opacity duration-300;
+    @apply content-[''] absolute -inset-[1px] rounded-lg opacity-0 transition-opacity duration-700;
     background: linear-gradient(90deg,
     transparent,
-    theme('colors.secondary.500/30'),
+    theme('colors.secondary.500/20'),
     transparent
     );
+    animation: scanner 3s ease-in-out forwards;
+    animation-play-state: paused;
   }
 
   .tech-card:hover::after {
     @apply opacity-100;
-    animation: scanner 2s ease-in-out infinite;
+    animation-play-state: running;
   }
 
   .typing-effect {
@@ -97,6 +99,14 @@
   .grid-bg {
     background-size: 30px 30px;
     @apply bg-cyber-grid;
+  }
+
+  .terminal-command {
+    @apply flex items-center;
+  }
+
+  .terminal-command-symbol {
+    @apply mr-2 inline-block;
   }
 }
 
@@ -202,3 +212,4 @@
 .code-editor-content li {
   margin-bottom: 0.5rem;
 }
+

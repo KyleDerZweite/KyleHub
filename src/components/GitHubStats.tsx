@@ -1,8 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-import { FiGithub, FiStar, FiGitBranch, FiCode, FiClock } from 'react-icons/fi'
+import {useEffect, useState} from 'react'
+import {motion} from 'framer-motion'
+import {FiGithub, FiStar, FiGitBranch, FiCode, FiClock} from 'react-icons/fi'
 
 // Define types for the data we'll fetch
 type LanguageStats = {
@@ -83,10 +83,10 @@ const GitHubStats = () => {
         <section id="github-stats" className="py-24 bg-gradient-to-b from-cyberpunk-dark to-black">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                    initial={{opacity: 0, y: 20}}
+                    whileInView={{opacity: 1, y: 0}}
+                    viewport={{once: true}}
+                    transition={{duration: 0.8}}
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -95,16 +95,16 @@ const GitHubStats = () => {
             </span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto flex items-center justify-center">
-                        <FiGithub className="mr-2" />
+                        <FiGithub className="mr-2"/>
                         github.com/KyleDerZweite/KyleHub
                     </p>
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    initial={{opacity: 0, y: 20}}
+                    whileInView={{opacity: 1, y: 0}}
+                    viewport={{once: true}}
+                    transition={{duration: 0.8, delay: 0.2}}
                     className="tech-card p-6 rounded-lg border border-purple-500/30 bg-black/60 backdrop-blur-sm max-w-4xl mx-auto"
                 >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -114,18 +114,18 @@ const GitHubStats = () => {
 
                             <div className="flex items-center space-x-6 mb-6">
                                 <div className="flex items-center">
-                                    <FiStar className="text-yellow-400 mr-2" />
+                                    <FiStar className="text-yellow-400 mr-2"/>
                                     <span className="text-gray-300">{stats.stars} stars</span>
                                 </div>
                                 <div className="flex items-center">
-                                    <FiGitBranch className="text-gray-400 mr-2" />
+                                    <FiGitBranch className="text-gray-400 mr-2"/>
                                     <span className="text-gray-300">{stats.forks} forks</span>
                                 </div>
                             </div>
 
                             <div className="mb-4">
                                 <h4 className="text-lg font-medium text-white mb-3 flex items-center">
-                                    <FiCode className="mr-2" /> Language Distribution
+                                    <FiCode className="mr-2"/> Language Distribution
                                 </h4>
 
                                 {Object.entries(stats.languages).map(([lang, bytes]) => {
@@ -138,9 +138,9 @@ const GitHubStats = () => {
                                             </div>
                                             <div className="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
                                                 <motion.div
-                                                    initial={{ width: 0 }}
-                                                    animate={{ width: `${percentage}%` }}
-                                                    transition={{ duration: 1, delay: 0.5 }}
+                                                    initial={{width: 0}}
+                                                    animate={{width: `${percentage}%`}}
+                                                    transition={{duration: 1, delay: 0.5}}
                                                     className="h-full rounded-full"
                                                     style={{
                                                         backgroundColor: languageColors[lang] || languageColors.Default,
@@ -154,7 +154,7 @@ const GitHubStats = () => {
 
                             {/* Show when data was last updated */}
                             <div className="text-sm text-gray-500 flex items-center mt-4">
-                                <FiClock className="mr-1" />
+                                <FiClock className="mr-1"/>
                                 Last updated: {new Date(stats.updatedAt).toLocaleString()}
                             </div>
                         </div>
@@ -163,7 +163,8 @@ const GitHubStats = () => {
                             <div className="h-full flex items-center justify-center">
                                 <div className="relative w-full aspect-square max-w-xs">
                                     <svg viewBox="0 0 100 100" className="w-full h-full">
-                                        <circle cx="50" cy="50" r="40" fill="transparent" stroke="#1e1e1e" strokeWidth="10" />
+                                        <circle cx="50" cy="50" r="40" fill="transparent" stroke="#1e1e1e"
+                                                strokeWidth="10"/>
 
                                         {/* Create pie chart segments for languages */}
                                         {(() => {
@@ -188,9 +189,9 @@ const GitHubStats = () => {
                                                         key={lang}
                                                         d={pathData}
                                                         fill={languageColors[lang] || languageColors.Default}
-                                                        initial={{ opacity: 0 }}
-                                                        animate={{ opacity: 1 }}
-                                                        transition={{ duration: 0.5, delay: 0.8 }}
+                                                        initial={{opacity: 0}}
+                                                        animate={{opacity: 1}}
+                                                        transition={{duration: 0.5, delay: 0.8}}
                                                     >
                                                         <title>{lang}: {(percentage * 100).toFixed(1)}%</title>
                                                     </motion.path>
@@ -202,7 +203,7 @@ const GitHubStats = () => {
                                         })()}
 
                                         {/* Inner circle for better aesthetics */}
-                                        <circle cx="50" cy="50" r="20" fill="#000" stroke="#2a2a2a" strokeWidth="1" />
+                                        <circle cx="50" cy="50" r="20" fill="#000" stroke="#2a2a2a" strokeWidth="1"/>
                                     </svg>
                                 </div>
                             </div>
@@ -212,7 +213,7 @@ const GitHubStats = () => {
                                     <div key={lang} className="flex items-center text-sm">
                                         <div
                                             className="w-3 h-3 mr-2 rounded-full"
-                                            style={{ backgroundColor: languageColors[lang] || languageColors.Default }}
+                                            style={{backgroundColor: languageColors[lang] || languageColors.Default}}
                                         ></div>
                                         <span className="text-gray-300">{lang}</span>
                                     </div>
@@ -228,7 +229,7 @@ const GitHubStats = () => {
                             rel="noopener noreferrer"
                             className="text-primary-400 hover:text-primary-300 transition-colors flex items-center"
                         >
-                            <FiGithub className="mr-2" /> View on GitHub
+                            <FiGithub className="mr-2"/> View on GitHub
                         </a>
                     </div>
                 </motion.div>
